@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>post | Hexo</title>
+  <title>Box.File | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
@@ -68,9 +68,9 @@
   <div class="outer">
     <div class="inner"></div>
     <div class="page-content"><header id="api-header">
-  <h1 id="api-title">post Class</h1>
+  <h1 id="api-title">Box.File Class</h1>
   <div class="api-meta">
-    Defined in <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/post/index.js#L1">lib/post/index.js:1</a>
+    Defined in <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/box/file.js#L6">lib/box/file.js:6</a>
     
     
   </div>
@@ -78,60 +78,73 @@
 
 <div class="page-entry">
   <h2 class="api-section-title">Description</h2>
-  <p>Post functions.</p>
+  <p>The file object of the Box class.</p>
 
   
-  
-    <h2 class="api-section-title">Methods</h2>
-    
-      <div id="method_create" class="api-item method public">
+    <h2 class="api-section-title">Constructor</h2>
+    <div id="constructor" class="api-item constructor public">
   <header class="api-item-header">
     <h3 class="api-item-title">
-      <a href="#method_create">create</a>
+      <a href="#constructor">Box.File</a>
     </h3>
     
-      <span class="api-item-params">(data, [replace=false], callback)</span>
+      <span class="api-item-params">(box, source, path, type, params)</span>
     
     
-    <span class="api-item-flag static">static</span>
+    
     
   </header>
   <div class="api-item-meta">
     
       Defined in
     
-    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/post/create.js#L89">lib/post/create.js:89</a>
+    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/box/file.js#L6">lib/box/file.js:6</a>
   </div>
   
   <div class="api-item-entry">
-    <p>Creates a new post.</p>
+    <p>The file object of the Box class.</p>
 
     
       <h4 class="api-item-subtitle">Parameters</h4>
       <ul>
         
           <li>
-            <strong>data</strong>
-            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Object</a></span>
+            <strong>box</strong>
+            <span class="api-item-type"><a href="/hexo/api/classes/Box.html">Box</a></span>
             
             
           </li>
         
           <li>
-            <strong>replace</strong>
-            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>
-            
-              <span class="api-item-flag optional">optional</span>
+            <strong>source</strong>
+            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></span>
             
             
-              <p>Determines whether to replace existing data.</p>
+              <p>The full path of the file.</p>
 
             
           </li>
         
           <li>
-            <strong>callback</strong>
-            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function">Function</a></span>
+            <strong>path</strong>
+            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></span>
+            
+            
+              <p>The relative path of the file.</p>
+
+            
+          </li>
+        
+          <li>
+            <strong>type</strong>
+            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></span>
+            
+            
+          </li>
+        
+          <li>
+            <strong>params</strong>
+            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Object</a></span>
             
             
           </li>
@@ -141,36 +154,31 @@
     
   </div>
 </div>
+  
+  
+    <h2 class="api-section-title">Methods</h2>
     
-      <div id="method_load" class="api-item method public">
+      <div id="method_read" class="api-item method public">
   <header class="api-item-header">
     <h3 class="api-item-title">
-      <a href="#method_load">load</a>
+      <a href="#method_read">read</a>
     </h3>
     
       <span class="api-item-params">([options], [callback])</span>
     
     
-    <span class="api-item-flag static">static</span>
+    <span class="api-item-flag async">async</span>
     
   </header>
   <div class="api-item-meta">
     
       Defined in
     
-    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/post/load.js#L4">lib/post/load.js:4</a>
+    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/box/file.js#L27">lib/box/file.js:27</a>
   </div>
   
   <div class="api-item-entry">
-    <p>Loads post files.</p>
-<p>This function does:</p>
-<ul>
-<li>theme/process<br>: Processes theme files</li>
-<li>theme/watch<br>: Watches theme files (When <code>options.watch</code> is true)</li>
-<li>source/process<br>: Processes source files</li>
-<li>source/watch<br>: Watches source files (When <code>options.watch</code> is true)</li>
-<li>theme/generate<br>: Runs generators</li>
-</ul>
+    <p>Reads the file.</p>
 
     
       <h4 class="api-item-subtitle">Parameters</h4>
@@ -200,55 +208,183 @@
   </div>
 </div>
     
-      <div id="method_render" class="api-item method public">
+      <div id="method_read" class="api-item method public">
   <header class="api-item-header">
     <h3 class="api-item-title">
-      <a href="#method_render">render</a>
+      <a href="#method_read">read</a>
     </h3>
     
-      <span class="api-item-params">(source, data, callback)</span>
+      <span class="api-item-params">([options])</span>
     
     
-    <span class="api-item-flag static">static</span>
+      <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></span>
+    
+    
     
   </header>
   <div class="api-item-meta">
     
       Defined in
     
-    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/post/render.js#L12">lib/post/render.js:12</a>
+    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/box/file.js#L57">lib/box/file.js:57</a>
   </div>
   
   <div class="api-item-entry">
-    <p>Renders post contents.</p>
-<p>Rendering flow:</p>
-<ul>
-<li>Compiles with Swig</li>
-<li>Runs pre-filter</li>
-<li>Compiles with Markdown (or other render engines, depends on the extension name of source files)</li>
-<li>Runs post-filter</li>
-</ul>
+    <p>Reads the file synchronizedly.</p>
 
     
       <h4 class="api-item-subtitle">Parameters</h4>
       <ul>
         
           <li>
-            <strong>source</strong>
-            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></span>
+            <strong>options</strong>
+            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Object</a></span>
+            
+              <span class="api-item-flag optional">optional</span>
             
             
-              <p>The path of source file</p>
+          </li>
+        
+      </ul>
+    
+    
+      <h4 class="api-item-subtitle">Returns</h4>
+      <ul>
+        <li>
+          <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></span>
+          
+        </li>
+      </ul>
+    
+  </div>
+</div>
+    
+      <div id="method_render" class="api-item method public">
+  <header class="api-item-header">
+    <h3 class="api-item-title">
+      <a href="#method_render">render</a>
+    </h3>
+    
+      <span class="api-item-params">([options], [callback])</span>
+    
+    
+    <span class="api-item-flag async">async</span>
+    
+  </header>
+  <div class="api-item-meta">
+    
+      Defined in
+    
+    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/box/file.js#L98">lib/box/file.js:98</a>
+  </div>
+  
+  <div class="api-item-entry">
+    <p>Renders the file with renderers.</p>
 
+    
+      <h4 class="api-item-subtitle">Parameters</h4>
+      <ul>
+        
+          <li>
+            <strong>options</strong>
+            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Object</a></span>
+            
+              <span class="api-item-flag optional">optional</span>
+            
             
           </li>
         
           <li>
-            <strong>data</strong>
-            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Object</a></span>
+            <strong>callback</strong>
+            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function">Function</a></span>
+            
+              <span class="api-item-flag optional">optional</span>
             
             
           </li>
+        
+      </ul>
+    
+    
+  </div>
+</div>
+    
+      <div id="method_renderSync" class="api-item method public">
+  <header class="api-item-header">
+    <h3 class="api-item-title">
+      <a href="#method_renderSync">renderSync</a>
+    </h3>
+    
+      <span class="api-item-params">([options])</span>
+    
+    
+      <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></span>
+    
+    
+    
+  </header>
+  <div class="api-item-meta">
+    
+      Defined in
+    
+    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/box/file.js#L119">lib/box/file.js:119</a>
+  </div>
+  
+  <div class="api-item-entry">
+    <p>Renders the file with renderers synchronizedly.</p>
+
+    
+      <h4 class="api-item-subtitle">Parameters</h4>
+      <ul>
+        
+          <li>
+            <strong>options</strong>
+            <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Object</a></span>
+            
+              <span class="api-item-flag optional">optional</span>
+            
+            
+          </li>
+        
+      </ul>
+    
+    
+      <h4 class="api-item-subtitle">Returns</h4>
+      <ul>
+        <li>
+          <span class="api-item-type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></span>
+          
+        </li>
+      </ul>
+    
+  </div>
+</div>
+    
+      <div id="method_stat" class="api-item method public">
+  <header class="api-item-header">
+    <h3 class="api-item-title">
+      <a href="#method_stat">stat</a>
+    </h3>
+    
+      <span class="api-item-params">(callback)</span>
+    
+    
+    <span class="api-item-flag async">async</span>
+    
+  </header>
+  <div class="api-item-meta">
+    
+      Defined in
+    
+    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/box/file.js#L77">lib/box/file.js:77</a>
+  </div>
+  
+  <div class="api-item-entry">
+    <p>Gets the file status.</p>
+
+    
+      <h4 class="api-item-subtitle">Parameters</h4>
+      <ul>
         
           <li>
             <strong>callback</strong>
@@ -259,6 +395,41 @@
         
       </ul>
     
+    
+  </div>
+</div>
+    
+      <div id="method_statSync" class="api-item method public">
+  <header class="api-item-header">
+    <h3 class="api-item-title">
+      <a href="#method_statSync">statSync</a>
+    </h3>
+    
+    
+      <span class="api-item-type"><a href="http://nodejs.org/api/fs.html#fs_class_fs_stats">fs.Stats</a></span>
+    
+    
+    
+  </header>
+  <div class="api-item-meta">
+    
+      Defined in
+    
+    <a href="https://github.com/tommy351/hexo/blob/2.5.0/lib/box/file.js#L88">lib/box/file.js:88</a>
+  </div>
+  
+  <div class="api-item-entry">
+    <p>Gets the file status synchronizedly.</p>
+
+    
+    
+      <h4 class="api-item-subtitle">Returns</h4>
+      <ul>
+        <li>
+          <span class="api-item-type"><a href="http://nodejs.org/api/fs.html#fs_class_fs_stats">fs.Stats</a></span>
+          
+        </li>
+      </ul>
     
   </div>
 </div>
@@ -277,7 +448,7 @@
   
     <a href="/hexo/api/classes/Box.html" class="sidebar-link">Box</a>
   
-    <a href="/hexo/api/classes/Box.File.html" class="sidebar-link">Box.File</a>
+    <a href="/hexo/api/classes/Box.File.html" class="sidebar-link current">Box.File</a>
   
     <a href="/hexo/api/classes/Box.Pattern.html" class="sidebar-link">Box.Pattern</a>
   
@@ -329,7 +500,7 @@
   
     <a href="/hexo/api/classes/i18n.html" class="sidebar-link">i18n</a>
   
-    <a href="/hexo/api/classes/post.html" class="sidebar-link current">post</a>
+    <a href="/hexo/api/classes/post.html" class="sidebar-link">post</a>
   
     <a href="/hexo/api/classes/render.html" class="sidebar-link">render</a>
   

@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -71,7 +70,7 @@
     <div class="page-content"><header id="api-header">
   <h1 id="api-title">SchemaType Class</h1>
   <div class="api-meta">
-    Defined in <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L1">lib/schematype.js:1</a>
+    Defined in <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L1">lib/schematype.js:1</a>
     
     
   </div>
@@ -81,29 +80,30 @@
   <h2 class="api-section-title">Description</h2>
   <p>The basic schema type constructor.</p>
 <p>This is an abstract class. Every schema type should inherit this class. For example:</p>
-<pre><code class="lang-js">var SchemaCustom = function(options){
-  SchemaType.call(this, options);
+<figure class="highlight js"><pre><span class="keyword">var</span> SchemaCustom = <span class="function"><span class="keyword">function</span><span class="params">(options)</span>{</span>
+  SchemaType.call(<span class="keyword">this</span>, options);
 };
 
 SchemaCustom.__proto__ = SchemaType;
 SchemaCustom.prototype.__proto__ = SchemaType.prototype;
-</code></pre>
+</pre></figure>
+
 <p><strong>Query operators</strong></p>
 <p>To add a query operator, adds a method whose name started with <code>q$</code>. For example:</p>
-<pre><code class="lang-js">SchemaCustom.q$foo = function(data, value){
-  // ...
+<figure class="highlight js"><pre>SchemaCustom.q$foo = <span class="function"><span class="keyword">function</span><span class="params">(data, value)</span>{</span>
+  <span class="comment">// ...</span>
 };
-</code></pre>
-<p>The <code>data</code> parameter is the data in the database; the <code>value</code> parameter is the value passed to the query operator.
-The return value should be a boolean indicating whether the data passed the test.</p>
+</pre></figure>
+
+<p>The <code>data</code> parameter is the data in the database; the <code>value</code> parameter is the value passed to the query operator.<br>The return value should be a boolean indicating whether the data passed the test.</p>
 <p><strong>Update operators</strong></p>
 <p>To add a update operator, adds a method whose name started with <code>u$</code>. For example:</p>
-<pre><code class="lang-js">SchemaCustom.u$bar = function(data, value){
-  // ...
+<figure class="highlight js"><pre>SchemaCustom.u$bar = <span class="function"><span class="keyword">function</span><span class="params">(data, value)</span>{</span>
+  <span class="comment">// ...</span>
 };
-</code></pre>
-<p>The <code>data</code> parameter is the data in the database; the <code>value</code> parameter is the value passed to the update operator.
-The return value will replace the original data.</p>
+</pre></figure>
+
+<p>The <code>data</code> parameter is the data in the database; the <code>value</code> parameter is the value passed to the update operator.<br>The return value will replace the original data.</p>
 
   
     <h2 class="api-section-title">Constructor</h2>
@@ -123,35 +123,36 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L1">lib/schematype.js:1</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L1">lib/schematype.js:1</a>
   </div>
   
   <div class="api-item-entry">
     <p>The basic schema type constructor.</p>
 <p>This is an abstract class. Every schema type should inherit this class. For example:</p>
-<pre><code class="lang-js">var SchemaCustom = function(options){
-  SchemaType.call(this, options);
+<figure class="highlight js"><pre><span class="keyword">var</span> SchemaCustom = <span class="function"><span class="keyword">function</span><span class="params">(options)</span>{</span>
+  SchemaType.call(<span class="keyword">this</span>, options);
 };
 
 SchemaCustom.__proto__ = SchemaType;
 SchemaCustom.prototype.__proto__ = SchemaType.prototype;
-</code></pre>
+</pre></figure>
+
 <p><strong>Query operators</strong></p>
 <p>To add a query operator, adds a method whose name started with <code>q$</code>. For example:</p>
-<pre><code class="lang-js">SchemaCustom.q$foo = function(data, value){
-  // ...
+<figure class="highlight js"><pre>SchemaCustom.q$foo = <span class="function"><span class="keyword">function</span><span class="params">(data, value)</span>{</span>
+  <span class="comment">// ...</span>
 };
-</code></pre>
-<p>The <code>data</code> parameter is the data in the database; the <code>value</code> parameter is the value passed to the query operator.
-The return value should be a boolean indicating whether the data passed the test.</p>
+</pre></figure>
+
+<p>The <code>data</code> parameter is the data in the database; the <code>value</code> parameter is the value passed to the query operator.<br>The return value should be a boolean indicating whether the data passed the test.</p>
 <p><strong>Update operators</strong></p>
 <p>To add a update operator, adds a method whose name started with <code>u$</code>. For example:</p>
-<pre><code class="lang-js">SchemaCustom.u$bar = function(data, value){
-  // ...
+<figure class="highlight js"><pre>SchemaCustom.u$bar = <span class="function"><span class="keyword">function</span><span class="params">(data, value)</span>{</span>
+  <span class="comment">// ...</span>
 };
-</code></pre>
-<p>The <code>data</code> parameter is the data in the database; the <code>value</code> parameter is the value passed to the update operator.
-The return value will replace the original data.</p>
+</pre></figure>
+
+<p>The <code>data</code> parameter is the data in the database; the <code>value</code> parameter is the value passed to the update operator.<br>The return value will replace the original data.</p>
 
     
       <h4 class="api-item-subtitle">Parameters</h4>
@@ -193,7 +194,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L89">lib/schematype.js:89</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L89">lib/schematype.js:89</a>
   </div>
   
   <div class="api-item-entry">
@@ -242,7 +243,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L77">lib/schematype.js:77</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L77">lib/schematype.js:77</a>
   </div>
   
   <div class="api-item-entry">
@@ -291,7 +292,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L113">lib/schematype.js:113</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L113">lib/schematype.js:113</a>
   </div>
   
   <div class="api-item-entry">
@@ -347,7 +348,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L126">lib/schematype.js:126</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L126">lib/schematype.js:126</a>
   </div>
   
   <div class="api-item-entry">
@@ -404,7 +405,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L182">lib/schematype.js:182</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L182">lib/schematype.js:182</a>
   </div>
   
   <div class="api-item-entry">
@@ -460,7 +461,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L195">lib/schematype.js:195</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L195">lib/schematype.js:195</a>
   </div>
   
   <div class="api-item-entry">
@@ -517,7 +518,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L210">lib/schematype.js:210</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L210">lib/schematype.js:210</a>
   </div>
   
   <div class="api-item-entry">
@@ -573,7 +574,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L154">lib/schematype.js:154</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L154">lib/schematype.js:154</a>
   </div>
   
   <div class="api-item-entry">
@@ -629,7 +630,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L167">lib/schematype.js:167</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L167">lib/schematype.js:167</a>
   </div>
   
   <div class="api-item-entry">
@@ -686,7 +687,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L141">lib/schematype.js:141</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L141">lib/schematype.js:141</a>
   </div>
   
   <div class="api-item-entry">
@@ -742,7 +743,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L229">lib/schematype.js:229</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L229">lib/schematype.js:229</a>
   </div>
   
   <div class="api-item-entry">
@@ -798,7 +799,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L274">lib/schematype.js:274</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L274">lib/schematype.js:274</a>
   </div>
   
   <div class="api-item-entry">
@@ -854,7 +855,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L248">lib/schematype.js:248</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L248">lib/schematype.js:248</a>
   </div>
   
   <div class="api-item-entry">
@@ -910,7 +911,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L261">lib/schematype.js:261</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L261">lib/schematype.js:261</a>
   </div>
   
   <div class="api-item-entry">
@@ -966,7 +967,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L101">lib/schematype.js:101</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L101">lib/schematype.js:101</a>
   </div>
   
   <div class="api-item-entry">
@@ -1015,7 +1016,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L54">lib/schematype.js:54</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L54">lib/schematype.js:54</a>
   </div>
   
   <div class="api-item-entry">
@@ -1040,7 +1041,7 @@ The return value will replace the original data.</p>
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/schematype.js#L66">lib/schematype.js:66</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/schematype.js#L66">lib/schematype.js:66</a>
   </div>
   
   <div class="api-item-entry">
@@ -1098,7 +1099,7 @@ The return value will replace the original data.</p>
   <footer id="footer">
   <div class="outer">
     <div class="inner">
-      &copy; 2013 <a href="http://zespia.tw">SkyArrow</a><br>
+      &copy; 2014 <a href="http://zespia.tw">SkyArrow</a><br>
       Background: <a href="http://subtlepatterns.com/shattered/" target="_blank">Shattered</a> by <a href="http://luukvanbaars.com/" target="_blank">Luuk van Baars</a>
     </div>
   </div>

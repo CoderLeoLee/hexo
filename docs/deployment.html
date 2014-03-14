@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -138,18 +137,19 @@
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#github"><span class="toc-number">1.</span> <span class="toc-text">GitHub</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#remove"><span class="toc-number">1.1.</span> <span class="toc-text">Remove</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#custom-domain"><span class="toc-number">1.2.</span> <span class="toc-text">Custom Domain</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#heroku"><span class="toc-number">2.</span> <span class="toc-text">Heroku</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#remove"><span class="toc-number">2.1.</span> <span class="toc-text">Remove</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#rsync"><span class="toc-number">3.</span> <span class="toc-text">Rsync</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#other-methods"><span class="toc-number">4.</span> <span class="toc-text">Other Methods</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub"><span class="toc-number">1.</span> <span class="toc-text">GitHub</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Remove"><span class="toc-number">1.1.</span> <span class="toc-text">Remove</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Custom_Domain"><span class="toc-number">1.2.</span> <span class="toc-text">Custom Domain</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Heroku"><span class="toc-number">2.</span> <span class="toc-text">Heroku</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Remove-1"><span class="toc-number">2.1.</span> <span class="toc-text">Remove</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Rsync"><span class="toc-number">3.</span> <span class="toc-text">Rsync</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenShift_DIY_Cartridge"><span class="toc-number">4.</span> <span class="toc-text">OpenShift DIY Cartridge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">5.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Batch_Deploy"><span class="toc-number">6.</span> <span class="toc-text">Batch Deploy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other_Methods"><span class="toc-number">7.</span> <span class="toc-text">Other Methods</span></a></li></ol>
       </div>
       <div class="page-entry">
         <p>To deploy your site with Hexo, you only need one command.</p>
 <figure class="highlight bash"><pre>$ hexo deploy
 </pre></figure>
 
-<h2 id="github">GitHub</h2>
+<h2 id="GitHub">GitHub</h2>
 <p>Edit <code>_config.yml</code>.</p>
 <figure class="highlight yaml"><pre>deploy:
   <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span>
-  repository:
+  repo: &lt;repository url&gt;
+  branch: [branch]
 </pre></figure>
 
 <table>
@@ -164,28 +164,32 @@
 <td><code>repo</code><br><code>repository</code></td>
 <td>GitHub repository URL (Better to use HTTPS)</td>
 </tr>
+<tr>
+<td><code>branch</code></td>
+<td>The deployer will detect the branch to use automatically. You can also customize it on your own.</td>
+</tr>
 </tbody>
 </table>
-<h3 id="remove">Remove</h3>
+<h3 id="Remove">Remove</h3>
 <p>Remove <code>.deploy</code> folder.</p>
 <figure class="highlight bash"><pre>$ rm -rf .deploy
 </pre></figure>
 
-<h3 id="custom-domain">Custom Domain</h3>
+<h3 id="Custom_Domain">Custom Domain</h3>
 <p>Create a file named <code>CNAME</code> in <code>source</code> folder with the following content.</p>
 <figure class="highlight"><pre>example<span class="preprocessor">.com</span>
 </pre></figure>
 
 <ul>
-<li><strong>Top-level Domain:</strong> Add A record <code>204.232.175.78</code></li>
+<li><strong>Top-level Domain:</strong> Add A records: <code>192.30.252.153</code>, <code>192.30.252.154</code>.</li>
 <li><strong>Subdomain</strong>: Add CNAME record <code>blog.example.com</code>.</li>
 </ul>
 <p>Check <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages" target="_blank">GitHub Pages</a> for more info.</p>
-<h2 id="heroku">Heroku</h2>
+<h2 id="Heroku">Heroku</h2>
 <p>Edit <code>_config.yml</code>.</p>
 <figure class="highlight yaml"><pre>deploy:
   <span class="class"><span class="keyword">type</span>: <span class="title">heroku</span></span>
-  repository:
+  repo: &lt;repository url&gt;
 </pre></figure>
 
 <table>
@@ -202,17 +206,17 @@
 </tr>
 </tbody>
 </table>
-<h3 id="remove">Remove</h3>
+<h3 id="Remove-1">Remove</h3>
 <p>Remove <code>.git</code>, <code>app.js</code> &amp; <code>Procfile</code>.</p>
-<h2 id="rsync">Rsync</h2>
+<h2 id="Rsync">Rsync</h2>
 <p>Edit <code>_config.yml</code>.</p>
 <figure class="highlight yaml"><pre>deploy:
-  <span class="class"><span class="keyword">type</span>: <span class="title">rsync</span></span>
-  host:
-  user:
-  root:
-  port:
-  delete:
+  <span class="keyword">type</span>: rsync
+  host: &lt;host&gt;
+  user: &lt;user&gt;
+  root: &lt;root&gt;
+  port: [port] # <span class="keyword">Default</span> <span class="keyword">is</span> <span class="number">22</span>
+  delete: [<span class="keyword">true</span>|<span class="keyword">false</span>] # <span class="keyword">Default</span> <span class="keyword">is</span> <span class="keyword">true</span>
 </pre></figure>
 
 <table>
@@ -251,12 +255,73 @@
 </tr>
 </tbody>
 </table>
-<h2 id="other-methods">Other Methods</h2>
+<h2 id="OpenShift_DIY_Cartridge">OpenShift DIY Cartridge</h2>
+<p>Edit <code>_config.yml</code>.</p>
+<figure class="highlight yaml"><pre>deploy:
+  <span class="keyword">type</span>: openshift
+  remote: &lt;upstream git remote&gt;
+  branch: [upstream git branch] # <span class="keyword">Default</span> <span class="keyword">is</span> master
+</pre></figure>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>remote</code></td>
+<td>Upstream Git remote</td>
+<td></td>
+</tr>
+<tr>
+<td><code>branch</code></td>
+<td>Upstream Git branch</td>
+<td>master</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Git">Git</h2>
+<p>Edit <code>_config.yml</code>.</p>
+<figure class="highlight yaml"><pre>deploy:
+  type: git
+  repo:
+    github: <span class="tag">&lt;<span class="title">repository</span> <span class="attribute">url</span>&gt;</span>,[branch]
+    gitcafe: <span class="tag">&lt;<span class="title">repository</span> <span class="attribute">url</span>&gt;</span>,[branch]
+</pre></figure>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>repo</code><br><code>repository</code></td>
+<td>Repository URL and branch. Separated with a comma (<code>,</code>). The branch is <code>master</code> by default.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Batch_Deploy">Batch Deploy</h2>
+<p>You can deploy your site to multiple destinations.</p>
+<figure class="highlight yaml"><pre>deploy:
+- type: github
+  repo: <span class="keyword">...</span>
+- type: heroku
+  repo: <span class="keyword">...</span>
+</pre></figure>
+
+<h2 id="Other_Methods">Other Methods</h2>
 <p>All generated files are saved in <code>public</code> folder. You can copy it to wherever you like.</p>
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2013-08-24T17:26:50.000Z">Last updated: Aug 25, 2013</time>
+        <time id="page-footer-updated" datetime="2014-03-09T08:45:32.000Z">Last updated: Mar 9, 2014</time>
         <a href="/hexo/docs/server.html" id="page-footer-prev" class="page-footer-link">Prev</a>
         <a href="/hexo/docs/permalinks.html" id="page-footer-next" class="page-footer-link">Next</a>
       </footer>
@@ -326,7 +391,7 @@
   <footer id="footer">
   <div class="outer">
     <div class="inner">
-      &copy; 2013 <a href="http://zespia.tw">SkyArrow</a><br>
+      &copy; 2014 <a href="http://zespia.tw">SkyArrow</a><br>
       Background: <a href="http://subtlepatterns.com/shattered/" target="_blank">Shattered</a> by <a href="http://luukvanbaars.com/" target="_blank">Luuk van Baars</a>
     </div>
   </div>

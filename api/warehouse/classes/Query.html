@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -71,7 +70,7 @@
     <div class="page-content"><header id="api-header">
   <h1 id="api-title">Query Class</h1>
   <div class="api-meta">
-    Defined in <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L19">lib/query.js:19</a>
+    Defined in <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L19">lib/query.js:19</a>
     
     
   </div>
@@ -83,10 +82,11 @@
 <p>Warehouse uses a MongoDB-like way to query documents.</p>
 <p><strong>Logical operators</strong></p>
 <p>You can use an array of two or more expressions in logical operators. For example:</p>
-<pre><code class="lang-js">query.find({
-  $or: [{comments: true}, {published: false}]
+<figure class="highlight js"><pre>query.find({
+  $or: [{comments: <span class="literal">true</span>}, {published: <span class="literal">false</span>}]
 });
-</code></pre>
+</pre></figure>
+
 <ul>
 <li><strong>$or</strong> - Performs a logical <code>OR</code> operation</li>
 <li><strong>$and</strong> - Performs a logical <code>AND</code> operation</li>
@@ -112,7 +112,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L19">lib/query.js:19</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L19">lib/query.js:19</a>
   </div>
   
   <div class="api-item-entry">
@@ -120,10 +120,11 @@
 <p>Warehouse uses a MongoDB-like way to query documents.</p>
 <p><strong>Logical operators</strong></p>
 <p>You can use an array of two or more expressions in logical operators. For example:</p>
-<pre><code class="lang-js">query.find({
-  $or: [{comments: true}, {published: false}]
+<figure class="highlight js"><pre>query.find({
+  $or: [{comments: <span class="literal">true</span>}, {published: <span class="literal">false</span>}]
 });
-</code></pre>
+</pre></figure>
+
 <ul>
 <li><strong>$or</strong> - Performs a logical <code>OR</code> operation</li>
 <li><strong>$and</strong> - Performs a logical <code>AND</code> operation</li>
@@ -171,7 +172,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L80">lib/query.js:80</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L80">lib/query.js:80</a>
   </div>
   
   <div class="api-item-entry">
@@ -222,7 +223,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L404">lib/query.js:404</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L404">lib/query.js:404</a>
   </div>
   
   <div class="api-item-entry">
@@ -276,7 +277,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L138">lib/query.js:138</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L138">lib/query.js:138</a>
   </div>
   
   <div class="api-item-entry">
@@ -313,12 +314,11 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L223">lib/query.js:223</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L223">lib/query.js:223</a>
   </div>
   
   <div class="api-item-entry">
-    <p>Returns the document at the specified index.
-<code>num</code> can be a positive or negative number.</p>
+    <p>Returns the document at the specified index.<br><code>num</code> can be a positive or negative number.</p>
 
     
       <h4 class="api-item-subtitle">Parameters</h4>
@@ -363,7 +363,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L498">lib/query.js:498</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L498">lib/query.js:498</a>
   </div>
   
   <div class="api-item-entry">
@@ -421,7 +421,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L521">lib/query.js:521</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L521">lib/query.js:521</a>
   </div>
   
   <div class="api-item-entry">
@@ -468,14 +468,15 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L239">lib/query.js:239</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L239">lib/query.js:239</a>
   </div>
   
   <div class="api-item-entry">
     <p>Returns the first document in the query.</p>
 <p>This method is an alias of:</p>
-<pre><code class="lang-js">query.eq(0);
-</code></pre>
+<figure class="highlight js"><pre>query.eq(<span class="number">0</span>);
+</pre></figure>
+
 
     
     
@@ -506,7 +507,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L99">lib/query.js:99</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L99">lib/query.js:99</a>
   </div>
   
   <div class="api-item-entry">
@@ -546,14 +547,15 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L256">lib/query.js:256</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L256">lib/query.js:256</a>
   </div>
   
   <div class="api-item-entry">
     <p>Returns the last item in the model.</p>
 <p>This method is an alias of:</p>
-<pre><code class="lang-js">query.eq(-1);
-</code></pre>
+<figure class="highlight js"><pre>query.eq(-<span class="number">1</span>);
+</pre></figure>
+
 
     
     
@@ -586,14 +588,15 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L286">lib/query.js:286</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L286">lib/query.js:286</a>
   </div>
   
   <div class="api-item-entry">
     <p>Limits the number of items returned.</p>
 <p>This method is an alias of:</p>
-<pre><code class="lang-js">query.slice(0, num);
-</code></pre>
+<figure class="highlight js"><pre>query.slice(<span class="number">0</span>, num);
+</pre></figure>
+
 
     
       <h4 class="api-item-subtitle">Parameters</h4>
@@ -636,7 +639,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L533">lib/query.js:533</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L533">lib/query.js:533</a>
   </div>
   
   <div class="api-item-entry">
@@ -675,7 +678,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L391">lib/query.js:391</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L391">lib/query.js:391</a>
   </div>
   
   <div class="api-item-entry">
@@ -711,7 +714,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L199">lib/query.js:199</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L199">lib/query.js:199</a>
   </div>
   
   <div class="api-item-entry">
@@ -752,7 +755,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L174">lib/query.js:174</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L174">lib/query.js:174</a>
   </div>
   
   <div class="api-item-entry">
@@ -800,7 +803,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L322">lib/query.js:322</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L322">lib/query.js:322</a>
   </div>
   
   <div class="api-item-entry">
@@ -837,14 +840,15 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L304">lib/query.js:304</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L304">lib/query.js:304</a>
   </div>
   
   <div class="api-item-entry">
     <p>Specifies the number of items to skip.</p>
 <p>This method is an alias of:</p>
-<pre><code class="lang-js">query.slice(num);
-</code></pre>
+<figure class="highlight js"><pre>query.slice(num);
+</pre></figure>
+
 
     
       <h4 class="api-item-subtitle">Parameters</h4>
@@ -889,7 +893,7 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L273">lib/query.js:273</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L273">lib/query.js:273</a>
   </div>
   
   <div class="api-item-entry">
@@ -947,15 +951,16 @@
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L333">lib/query.js:333</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L333">lib/query.js:333</a>
   </div>
   
   <div class="api-item-entry">
     <p>Sorts the documents in the query.</p>
 <p>Example:</p>
-<pre><code class="lang-js">query.sort(&#39;date&#39;, -1);
-query.sort({date: -1, title: 1});
-</code></pre>
+<figure class="highlight js"><pre>query.sort(<span class="string">'date'</span>, -<span class="number">1</span>);
+query.sort({date: -<span class="number">1</span>, title: <span class="number">1</span>});
+</pre></figure>
+
 <p>If the <code>order</code> equals to <code>-1</code>, <code>desc</code> or <code>descending</code>, the data will be returned in reversed order.</p>
 
     
@@ -1008,7 +1013,7 @@ query.sort({date: -1, title: 1});
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L121">lib/query.js:121</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L121">lib/query.js:121</a>
   </div>
   
   <div class="api-item-entry">
@@ -1043,7 +1048,7 @@ query.sort({date: -1, title: 1});
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L149">lib/query.js:149</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L149">lib/query.js:149</a>
   </div>
   
   <div class="api-item-entry">
@@ -1095,7 +1100,7 @@ query.sort({date: -1, title: 1});
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L46">lib/query.js:46</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L46">lib/query.js:46</a>
   </div>
   
   <div class="api-item-entry">
@@ -1122,7 +1127,7 @@ query.sort({date: -1, title: 1});
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L56">lib/query.js:56</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L56">lib/query.js:56</a>
   </div>
   
   <div class="api-item-entry">
@@ -1147,7 +1152,7 @@ query.sort({date: -1, title: 1});
     
       Defined in
     
-    <a href="https://github.com/tommy351/warehouse/blob/0.1.13/lib/query.js#L66">lib/query.js:66</a>
+    <a href="https://github.com/tommy351/warehouse/blob/0.1.14/lib/query.js#L66">lib/query.js:66</a>
   </div>
   
   <div class="api-item-entry">
@@ -1205,7 +1210,7 @@ query.sort({date: -1, title: 1});
   <footer id="footer">
   <div class="outer">
     <div class="inner">
-      &copy; 2013 <a href="http://zespia.tw">SkyArrow</a><br>
+      &copy; 2014 <a href="http://zespia.tw">SkyArrow</a><br>
       Background: <a href="http://subtlepatterns.com/shattered/" target="_blank">Shattered</a> by <a href="http://luukvanbaars.com/" target="_blank">Luuk van Baars</a>
     </div>
   </div>

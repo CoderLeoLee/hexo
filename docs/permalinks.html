@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/hexo/css/style.css">
   <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -138,11 +137,12 @@
     <div class="page-content">
       <div class="toc-wrap">
         <strong class="toc-title">Contents</strong>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#variables"><span class="toc-number">1.</span> <span class="toc-text">Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#examples"><span class="toc-number">2.</span> <span class="toc-text">Examples</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Variables"><span class="toc-number">1.</span> <span class="toc-text">Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-number">2.</span> <span class="toc-text">Examples</span></a></li></ol>
       </div>
       <div class="page-entry">
         <p>You can specify the permalinks for your site in <code>_config.yml</code> or in the front-matter for each post.</p>
-<h3 id="variables">Variables</h3>
+<h3 id="Variables">Variables</h3>
+<p>Besides the following variables, you can use any attributes in the permalink since Hexo 2.5.</p>
 <table>
 <thead>
 <tr>
@@ -160,8 +160,16 @@
 <td>Published month of posts (2-digit)</td>
 </tr>
 <tr>
+<td><code>:i_month</code></td>
+<td>Published month of posts (Without leading zeros)</td>
+</tr>
+<tr>
 <td><code>:day</code></td>
 <td>Published day of posts (2-digit)</td>
+</tr>
+<tr>
+<td><code>:i_day</code></td>
+<td>Published day of posts (Without leading zeros)</td>
 </tr>
 <tr>
 <td><code>:title</code></td>
@@ -173,11 +181,11 @@
 </tr>
 <tr>
 <td><code>:category</code></td>
-<td>Categories. If the post is uncategorized, it&#39;ll be <code>category_dir</code> setting.</td>
+<td>Categories. If the post is uncategorized, it’ll be <code>category_dir</code> setting.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="examples">Examples</h3>
+<h3 id="Examples">Examples</h3>
 <p>Given a post named <code>hello-world.md</code> in <code>source/_posts</code> folder with   the following content.</p>
 <figure class="highlight yaml"><pre>title: Hello World
 date: 2013-07-14 17:01:34
@@ -211,7 +219,7 @@ categories:
 
       </div>
       <footer id="page-footer">
-        <time id="page-footer-updated" datetime="2013-08-24T17:27:53.000Z">Last updated: Aug 25, 2013</time>
+        <time id="page-footer-updated" datetime="2014-03-09T05:36:09.000Z">Last updated: Mar 9, 2014</time>
         <a href="/hexo/docs/deployment.html" id="page-footer-prev" class="page-footer-link">Prev</a>
         <a href="/hexo/docs/themes.html" id="page-footer-next" class="page-footer-link">Next</a>
       </footer>
@@ -281,7 +289,7 @@ categories:
   <footer id="footer">
   <div class="outer">
     <div class="inner">
-      &copy; 2013 <a href="http://zespia.tw">SkyArrow</a><br>
+      &copy; 2014 <a href="http://zespia.tw">SkyArrow</a><br>
       Background: <a href="http://subtlepatterns.com/shattered/" target="_blank">Shattered</a> by <a href="http://luukvanbaars.com/" target="_blank">Luuk van Baars</a>
     </div>
   </div>
